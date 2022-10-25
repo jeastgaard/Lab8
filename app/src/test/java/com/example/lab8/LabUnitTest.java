@@ -26,4 +26,29 @@ public class LabUnitTest {
         cities.addCity( testCity);
         assertEquals( 1, cities.getCount() );
     }
+
+    @Test
+    public void deleteCityTest() {
+        City testCity = mockCity("Edmonton", "Alberta" );
+        cities.addCity( testCity );
+        assertEquals( true, cities.hasCity( testCity ) );
+        cities.deleteCity( testCity );
+        assertEquals( false, cities.hasCity( testCity ) );
+    }
+
+    @Test
+    public void countCitiesTest() {
+        City testCity = mockCity("Edmonton", "Alberta" );
+        assertEquals( 0, cities.getCount() );
+        cities.add( testCity );
+        assertEquals( 1, cities.getCount() );
+    }
+
+    @Test
+    public void hasCityTest() {
+        City testCity = mockCity("Edmonton", "Alberta" );
+        assertEquals( false, cities.hasCity( testCity ) );
+        cities.addCity( testCity );
+        assertEquals( true, cities.hasCity( testCity ) );
+    }
 }
