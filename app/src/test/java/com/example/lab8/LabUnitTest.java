@@ -40,7 +40,7 @@ public class LabUnitTest {
     public void countCitiesTest() {
         City testCity = mockCity("Edmonton", "Alberta" );
         assertEquals( 0, cities.getCount() );
-        cities.add( testCity );
+        cities.addCity( testCity );
         assertEquals( 1, cities.getCount() );
     }
 
